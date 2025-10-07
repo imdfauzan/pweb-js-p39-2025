@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Recipe Showcase</div>
+            <div class="user-info">
+                <span id="welcome-message"></span>
+                <button id="logout-button">LOGOUT</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Your Recipe Collection</h1>
+            <p>Discover and manage your favorite recipes</p>
+        </section>
+
+        <section class="controls">
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search recipes...">
+                <button>🔍</button>
+            </div>
+            <div class="filter-bar">
+                <select id="cuisine-filter">
+                    <option value="all">All Cuisines</option>
+                </select>
+            </div>
+            <div id="recipe-count" class="recipe-count"></div>
+        </section>
+
+        <section id="recipe-gallery" class="recipe-gallery"></section>
+        
+        <div id="loader" class="loader-container" style="display: none;">
+            <div class="loader"></div>
+        </div>
+        
+        <div class="show-more-container">
+            <button id="show-more-button" style="display: none;">Show More Recipes</button>
+        </div>
+    </main>
+
+    <div id="recipe-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <button class="modal-close-button">&times;</button>
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+
+    <script src="js/recipes.js"></script>
+</body>
+</html>
