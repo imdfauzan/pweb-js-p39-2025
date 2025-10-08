@@ -261,7 +261,7 @@ nav {
 
 .controls {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr auto;
     gap: 20px;
     align-items: center;
     background: linear-gradient(135deg, rgba(108,99,255,0.25), rgba(142,124,255,0.25));
@@ -316,7 +316,7 @@ nav {
   color: #a58cff; 
 }
 
-#cuisine-filter {
+#cuisine-filter, #difficulty-filter {
   width: 100%;
   padding: 12px;
   border: 2px solid rgba(150, 130, 255, 0.4); 
@@ -339,7 +339,7 @@ nav {
 }
 
 .recipe-count {
-    text-align: right;
+    text-align: center;
     font-weight: 500;
     color: var(--light-text-color);
 }
@@ -368,17 +368,6 @@ nav {
     display: flex;
     flex-direction: column;
     transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.recipe-details span {
-    transition: all 0.3s ease; /* Tambahkan transisi agar halus */
-}
-
-.recipe-card:hover .recipe-details span {
-    background-color: var(--secondary-color);
-    color: white;
-    transform: translateY(-2px); /* Efek sedikit terangkat */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .recipe-card:hover {
