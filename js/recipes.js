@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const recipeGallery = document.getElementById('recipe-gallery');
     const searchInput = document.getElementById('search-input');
     const cuisineFilter = document.getElementById('cuisine-filter');
+    const difficultyFilter = document.getElementById('difficulty-filter');
     const recipeCount = document.getElementById('recipe-count');
     const showMoreButton = document.getElementById('show-more-button');
     const loader = document.getElementById('loader');
@@ -110,23 +111,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fungsi untuk filter dan search
     function applyFilters() {
-        const searchTerm = searchInput.value.toLowerCase();
-        const selectedCuisine = cuisineFilter.value;
+    const searchTerm = searchInput.value.toLowerCase();
+    const selectedCuisine = cuisineFilter.value;
+    const selectedDifficulty = difficultyFilter.value; // <-- Baris baru
 
-        filteredRecipes = allRecipes.filter(recipe => {
-            const matchesSearch = searchTerm === '' ||
-                recipe.name.toLowerCase().includes(searchTerm) ||
-                recipe.ingredients.some(ing => ing.toLowerCase().includes(searchTerm)) ||
-                recipe.tags.some(tag => tag.toLowerCase().includes(searchTerm));
+    filteredRecipes = allRecipes.filter(recipe => {
+        const matchesSearch = searchTerm === '' ||
+            recipe.name.toLowerCase().includes(searchTerm) ||
+            recipe.ingredients.some(ing => ing.toLowerCase().includes(searchTerm)) ||
+            recipe.tags.some(tag => tag.toLowerCase().includes(searchTerm));
 
-            const matchesCuisine = selectedCuisine === 'all' || recipe.cuisine === selectedCuisine;
+        const matchesCuisine = selectedCuisine === 'all' || recipe.cuisine === selectedCuisine;
 
-            return matchesSearch && matchesCuisine;
-        });
+        const matchesDifficulty = selectedDifficulty === 'all' || recipe.difficulty === selectedDifficulty; // <-- Baris baru
 
-        displayedRecipesCount = RECIPES_PER_PAGE;
-        displayRecipes();
-    }
+        return matchesSearch && matchesCuisine && matchesDifficulty; // <-- Diperbarui
+    });
+
+    displayedRecipesCount = RECIPES_PER_PAGE;
+    displayRecipes();
+}
 
     // Debouncing untuk search input
     let debounceTimer;
@@ -136,6 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     cuisineFilter.addEventListener('change', applyFilters);
+    difficultyFilter.addEventListener('change', applyFilters); // <-- TAMBAHKAN INI
 
     // Fungsi untuk tombol "Show More"
     showMoreButton.addEventListener('click', () => {

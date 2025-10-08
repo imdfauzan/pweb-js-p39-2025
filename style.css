@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #34495e;
-    --secondary-color: #D2C1B6;
+    --primary-color: #7A7A73;
+    --secondary-color: #FBF3D5;
     --background-color: #ecf0f1;
     --card-bg-color: #ffffff;
     --text-color: #333;
@@ -202,12 +202,34 @@ nav {
 
 .hero {
     text-align: center;
-    margin: 30px 0;
+    margin-top: 10px;
 }
 
 .hero h1 {
     font-size: 36px;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
+}
+
+.hero img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}
+
+.hero img:active {
+    transform: scale(0.8);
+    transition: transform 0.3s;
+}
+
+.logo:hover { /* tulisan Recipe Showcase berubah jadi gambar saat hover */
+    content: "";
+    background-image: url('https://png.pngtree.com/png-clipart/20250111/original/pngtree-a-chef-hat-surrounded-by-utensils-and-bowl-for-representing-the-png-image_20071414.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 65px;
+    height: 65px;
+    text-align: center; /* Agar gambar tampil di tengah */
+    line-height: 65px; /* Sesuaikan agar gambar tampil di tengah vertikal */
+    color: transparent;
 }
 
 .hero p {
@@ -217,7 +239,7 @@ nav {
 
 .controls {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr auto;
     gap: 20px;
     align-items: center;
     background: var(--card-bg-color);
@@ -252,7 +274,7 @@ nav {
     color: var(--light-text-color);
 }
 
-#cuisine-filter {
+#cuisine-filter, #difficulty-filter {
     width: 100%;
     padding: 12px;
     border: 1px solid var(--border-color);
@@ -281,6 +303,18 @@ nav {
     display: flex;
     flex-direction: column;
     transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efek hover untuk detail pills di recipe card */
+.recipe-details span {
+    transition: all 0.3s ease; /* Tambahkan transisi agar halus */
+}
+
+.recipe-card:hover .recipe-details span {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: translateY(-2px); /* Efek sedikit terangkat */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .recipe-card:hover {
@@ -357,13 +391,14 @@ nav {
     color: white;
     font-size: 14px;
     font-weight: 600;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .view-recipe-btn:hover {
     background-color: var(--secondary-color);
+    color: #715A5A
 }
 
 .loader-container {
@@ -462,7 +497,7 @@ nav {
     height: auto;
     max-height: 400px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 20px;
     margin-bottom: 20px;
 }
 
@@ -477,7 +512,7 @@ nav {
 .modal-detail-item {
     background-color: var(--background-color);
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
 .modal-detail-item strong {
