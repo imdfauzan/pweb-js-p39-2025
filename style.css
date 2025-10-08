@@ -1,14 +1,15 @@
 :root {
-    --primary-color: #7A7A73;
-    --secondary-color: #FBF3D5;
-    --background-color: #ecf0f1;
-    --card-bg-color: #ffffff;
-    --text-color: #333;
-    --light-text-color: #777;
-    --border-color: #e0e0e0;
+    --primary-color: #6C63FF;
+    --secondary-color: #FF8C42;
+    --background-color: #F8F9FC;
+    --card-bg-color:rgba(255, 255, 255, 0.8);
+    --text-color: #2C3E50;
+    --light-text-color: #7F8C8D;
+    --border-color: #E5E7EB;
     --success-color: #2ecc71;
     --error-color: #e74c3c;
-    --font-family: 'Inter', sans-serif;
+    --font-family: 'Poppins', 'Inter', sans-serif;
+
 }
 
 body {
@@ -20,7 +21,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- Login Page --- */
 .login-container {
     display: flex;
     justify-content: center;
@@ -29,13 +29,18 @@ body {
 }
 
 .login-box {
-    background: var(--card-bg-color);
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
+  background: var(--card-bg-color);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(150, 130, 255, 0.15);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.login-box:hover {
+  box-shadow: 0 10px 50px rgba(150, 130, 255, 0.25);
 }
 
 .login-box h2 {
@@ -66,18 +71,25 @@ body {
 }
 
 .input-group input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    box-sizing: border-box;
-    font-size: 16px;
-    transition: border-color 0.3s;
+  width: 100%;
+  padding: 12px;
+  border: 2px solid rgba(150, 130, 255, 0.4);
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.input-group input:hover {
+  border-color: rgba(150, 130, 255, 0.7);
+  box-shadow: 0 0 10px rgba(180, 160, 255, 0.3);
 }
 
 .input-group input:focus {
-    outline: none;
-    border-color: var(--secondary-color);
+  outline: none;
+  border-color: #8672FF;
+  box-shadow: 0 0 15px rgba(150, 130, 255, 0.5);
 }
 
 .password-wrapper {
@@ -87,7 +99,7 @@ body {
 }
 
 .password-wrapper input {
-    padding-right: 40px; /* Space for the icon */
+    padding-right: 40px; 
 }
 
 .toggle-password {
@@ -98,24 +110,28 @@ body {
 }
 
 #login-button {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    background-color: var(--primary-color);
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #6C63FF, #8E7CFF); 
+  box-shadow: 0 5px 20px rgba(108, 99, 255, 0.25);
 }
 
 #login-button:hover {
-    background-color: #34495e;
+  background: linear-gradient(135deg, #7B6FFF, #A595FF);
+  box-shadow: 0 8px 25px rgba(150, 130, 255, 0.35);
+  transform: translateY(-2px);
 }
 
 #login-button:active {
-    transform: scale(0.98);
+  transform: scale(0.98);
+  box-shadow: 0 5px 15px rgba(108, 99, 255, 0.2);
 }
 
 #login-button:disabled {
@@ -149,11 +165,11 @@ body {
     color: var(--light-text-color);
 }
 
-/* --- Recipe Page --- */
 header {
-    background: var(--card-bg-color);
+    background: linear-gradient(135deg, #6C63FF 0%, #8672FF 100%);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     padding: 0 5%;
+    color: white;
 }
 
 nav {
@@ -166,7 +182,7 @@ nav {
 .logo {
     font-size: 24px;
     font-weight: 700;
-    color: var(--primary-color);
+    color: white;
 }
 
 .user-info {
@@ -184,9 +200,10 @@ nav {
     border: none;
     background-color: var(--primary-color);
     color: white;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
+    box-shadow: 0 4px 8px rgba(127, 68, 255, 0.3);
     transition: background-color 0.3s;
 }
 
@@ -202,12 +219,13 @@ nav {
 
 .hero {
     text-align: center;
-    margin-top: 10px;
+    margin: 30px 0;
 }
 
 .hero h1 {
     font-size: 36px;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
 }
 
 .hero img:hover {
@@ -239,15 +257,17 @@ nav {
 
 .controls {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr auto;
+    grid-template-columns: 2fr 1fr 1fr;
     gap: 20px;
     align-items: center;
-    background: var(--card-bg-color);
+    background: linear-gradient(135deg, rgba(108,99,255,0.25), rgba(142,124,255,0.25));
+    backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 12px;
     margin-bottom: 40px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(108, 99, 255, 0.15);
 }
+
 
 .search-bar {
     position: relative;
@@ -257,30 +277,61 @@ nav {
 .search-bar input {
     width: 100%;
     padding: 12px 15px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border: 2px solid rgba(150, 130, 255, 0.4); 
+    border-radius: 10px;
     font-size: 16px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.search-bar input:hover {
+  border-color: rgba(150, 130, 255, 0.7);
+  box-shadow: 0 0 10px rgba(180, 160, 255, 0.3);
+}
+
+.search-bar input:focus {
+  border-color: #8672FF;
+  box-shadow: 0 0 15px rgba(150, 130, 255, 0.5);
+  outline: none;
 }
 
 .search-bar button {
-    position: absolute;
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    background: none;
-    font-size: 20px;
-    cursor: pointer;
-    color: var(--light-text-color);
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #8672FF; 
+  transition: color 0.3s ease;
 }
 
-#cuisine-filter, #difficulty-filter {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-size: 16px;
-    background: white;
+.search-bar button:hover {
+  color: #a58cff; 
+}
+
+#cuisine-filter {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid rgba(150, 130, 255, 0.4); 
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: white;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+#cuisine-filter:hover {
+  border-color: rgba(150, 130, 255, 0.7);
+  box-shadow: 0 0 10px rgba(180, 160, 255, 0.3);
+}
+
+#cuisine-filter:focus {
+  border-color: #8672FF;
+  box-shadow: 0 0 15px rgba(150, 130, 255, 0.5);
+  outline: none;
 }
 
 .recipe-count {
@@ -305,7 +356,6 @@ nav {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Efek hover untuk detail pills di recipe card */
 .recipe-details span {
     transition: all 0.3s ease; /* Tambahkan transisi agar halus */
 }
@@ -319,7 +369,10 @@ nav {
 
 .recipe-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    box-shadow:
+    0 0 20px rgba(150, 130, 255, 0.5),  
+    0 0 40px rgba(180, 160, 255, 0.3),  
+    0 0 60px rgba(200, 180, 255, 0.2); 
 }
 
 .recipe-card:active {
@@ -331,6 +384,7 @@ nav {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-bottom: 4px solid var(--primary-color);
 }
 
 .recipe-card-content {
@@ -343,6 +397,7 @@ nav {
 .recipe-card-content h3 {
     margin: 0 0 10px;
     font-size: 20px;
+    color: var(--primary-color);
 }
 
 .recipe-details {
@@ -356,6 +411,7 @@ nav {
 
 .recipe-details span {
     background: #f1f3f5;
+    color: var(--primary-color);
     padding: 4px 8px;
     border-radius: 4px;
 }
@@ -370,9 +426,10 @@ nav {
 .recipe-rating {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
     margin-top: auto;
     font-size: 14px;
+    color: #f39c12;
 }
 
 .recipe-rating .stars {
@@ -391,14 +448,13 @@ nav {
     color: white;
     font-size: 14px;
     font-weight: 600;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .view-recipe-btn:hover {
     background-color: var(--secondary-color);
-    color: #715A5A
 }
 
 .loader-container {
@@ -444,7 +500,6 @@ nav {
     color: white;
 }
 
-/* --- Modal Styling --- */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -497,7 +552,7 @@ nav {
     height: auto;
     max-height: 400px;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 8px;
     margin-bottom: 20px;
 }
 
@@ -512,7 +567,7 @@ nav {
 .modal-detail-item {
     background-color: var(--background-color);
     padding: 15px;
-    border-radius: 6px;
+    border-radius: 8px;
 }
 
 .modal-detail-item strong {
@@ -553,7 +608,6 @@ nav {
     margin-bottom: 8px;
 }
 
-/* --- Responsive --- */
 @media (max-width: 768px) {
     .controls {
         grid-template-columns: 1fr;
