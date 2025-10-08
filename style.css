@@ -159,6 +159,10 @@ body {
 .message.error {
     background-color: #fbeae5;
     color: var(--error-color);
+    font-weight: 600;
+    border-left: 4px solid var(--error-color);
+    padding-left: 15px;
+    font-size: 1.1em;
 }
 
 .message.loading {
@@ -344,6 +348,16 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
+}
+
+.recipe-gallery .message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
 }
 
 .recipe-card {
